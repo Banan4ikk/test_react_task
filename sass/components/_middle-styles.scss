@@ -1,0 +1,162 @@
+@import "_variables";
+
+.middle-block-main {
+    padding-top: 100px;
+    width: 100%;
+    height: max-content;
+    margin-top: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  
+    .greetings {
+      margin: 0 auto;
+      width: max-content;
+      color: $font-color;
+      font-family: $dosis-font;
+      flex-direction: column;
+      display: flex;
+      justify-content: center;
+  
+      .main-text {
+        color: $font-color;
+        font-family: $dosis-font;
+        font-size: 25px;
+        margin: 0 auto;
+        font-weight: 700;
+      }
+  
+      .Welcome {
+        color: $font-color;
+        font-family: $dosis-font;
+        font-size: 45px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+      }
+  
+      .author {
+        margin: 0;
+        margin-left: auto;
+        margin-top: 10px;
+        font-weight: 600;
+        font-size: 20px;
+        color: #fe4a5d;
+      }
+  
+      img {
+        margin: 0 auto;
+        margin-right: 10px;
+        width: 40px;
+      }
+    }
+  
+    .middle {
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+  
+      .form-container {
+        .border {
+          padding: 60px 100px;
+          @include gradient-border(#e22128, #f9b316, 7px, "to right");
+          background-color: transparent;
+          margin: 0px 50px;
+  
+          .title {
+            display: flex;
+            justify-content: center;
+            color: $font-color;
+            font-size: 35px;
+            font-family: $dosis-font;
+            font-weight: 700;
+  
+            p {
+              margin-top: 0;
+            }
+          }
+  
+          img {
+            padding: 0 10px;
+            width: 7px;
+          }
+  
+          .sign-up-fackebook {
+            font-family: $dosis-font;
+            font-size: 18px;
+            font-weight: 600;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            background-color: #2f53a3;
+            color: $white;
+            border: none;
+            width: 270px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            @include button-animation(#2f53a3);
+          }
+  
+          .or-class {
+            display: flex;
+            justify-content: center;
+            font-family: $dosis-font;
+            font-weight: 800;
+            color: #dcdcdc;
+  
+            &:before {
+              margin-right: 10px;
+              display: inline-block;
+              content: "";
+              border-top: 2px solid #dcdcdc;
+              width: 7.2rem;
+              transform: translateY(1.5rem);
+            }
+  
+            &:after {
+              margin-left: 10px;
+              display: inline-block;
+              content: "";
+              border-top: 2px solid #dcdcdc;
+              width: 7.2rem;
+              transform: translateY(1.5rem);
+            }
+          }
+  
+          .form {
+            display: flex;
+            flex-direction: column;
+            @include placeholder-settings(#81398b, $dosis-font, 700, 16px, 10px);
+            input {
+              color: #81398b;
+              border-radius: 5px;
+              border: 1px solid #dcdcdc;
+              height: 40px;
+              margin-top: 15px;
+              font-size: 16px;
+              font-weight: 600;
+            }
+  
+            .lets-go-button {
+              background-color: #81398b;
+              color: $white;
+              font-size: 18px;
+              font-weight: 600;
+              font-family: $dosis-font;
+              margin-top: 15px;
+              padding: 10px 20px;
+              border-radius: 5px;
+              border: none;
+              @include button-animation(#81398b);
+            }
+          }
+        }
+      }
+  
+      img {
+        object-fit: cover;
+        overflow: hidden;
+      }
+    }
+  }

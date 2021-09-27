@@ -1,0 +1,146 @@
+@import "_variables";
+
+.footer-container {
+    margin-top: 205px;
+    object-fit: cover;
+    overflow: hidden;
+  
+    .join-now {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 110%;
+      margin-left: -3%;
+  
+      img {
+        width: 110%;
+        object-fit: cover;
+        overflow: hidden;
+      }
+  
+      .content-join-now {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        margin-right: 10px;
+  
+        p {
+          font-family: $dosis-font;
+          color: #67326e;
+          font-size: 65px;
+          font-weight: 700;
+          margin: 0 auto;
+        }
+  
+        button {
+          margin: 0 auto;
+          margin-top: 15px;
+          padding: 10px 40px;
+          border-radius: 5px;
+          border: none;
+          color: $white;
+          font-family: $dosis-font;
+          font-weight: 600;
+          font-size: 1.4em;
+          background: linear-gradient(to right, #e22128, #f9b316);
+          transition: padding 0.2s ease-in-out, transform 0.1s ease-in-out;
+  
+          &:hover {
+            padding: 15px 30px;
+            cursor: pointer;
+          }
+  
+          &:active {
+            transform: translateY(2px);
+          }
+        }
+      }
+    }
+  
+    .footer {
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      .footer-form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        p {
+          font-size: 1.2em;
+          font-family: $dosis-font;
+          font-weight: 700;
+          color: #00cfae;
+        }
+        form {
+          display: flex;
+          input {
+            margin-left: 20px;
+            height: 33px;
+            width: 300px;
+          }
+  
+          button {
+            margin-left: -5px;
+            padding: 10px 30px;
+            background-color: #00cfae;
+            color: $white;
+            border: none;
+            font-size: 1em;
+            font-family: $dosis-font;
+            font-weight: 700;
+            border-radius: 0 5px 5px 0;
+            @include button-animation(#00cfae);
+          }
+          @include placeholder-settings(#cacaca, $dosis-font, 700, 16px, 10px);
+        }  
+      }
+      .links{
+        display: flex;
+        justify-content: center;
+        margin: 60px 0px;
+        a{
+          margin-left: 60px;
+          text-decoration: none;
+          color: $font-color;
+          font-weight: 800;
+          font-size: 1.2em;
+          font-family: $dosis-font;
+          transition: transform 0.05s ease-in-out, color 0.1s ease-in-out;
+  
+          &:hover {
+            cursor: pointer;
+            color: lighten($font-color, 30%);
+          }
+        
+          &:active {
+            color: lighten($font-color, 50%);
+            transform: translateY(2px);
+          }
+        }
+      }
+      .flags{
+        display: flex;
+        justify-content: center;
+        &:after{
+          position: absolute;
+          margin-top: 30px;
+          margin-left: 60px ;
+          content: "";
+          background-color: #d3d3d3;
+          height: 1px;
+          width: 58vw;
+        }
+      }
+      .rights{
+        display: flex;
+        justify-content: center;
+        font-family: $dosis-font;
+        font-weight: 600;
+        font-size: 0.9em;
+        color: #2f1946;
+        margin-top: 30px;
+      }
+    }
+  }
+  

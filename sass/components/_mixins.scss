@@ -1,0 +1,86 @@
+@mixin gradient-border($color1, $color2, $border-width, $direction) {
+  border: none;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(#{$direction}, $color1 0%, $color2 100%),
+    linear-gradient(#{$direction}, $color1 0%, $color2 100%);
+
+  @if $direction== "to right" or $direction== "to left" {
+    @if $direction== "to right" {
+      border-left: $border-width solid $color1;
+      border-right: $border-width solid $color2;
+    } @else {
+      border-left: $border-width solid $color2;
+      border-right: $border-width solid $color1;
+    }
+
+    background-position: 0 0, 0 100%;
+    background-size: 100% $border-width;
+  }
+
+  @if $direction== "to top" or $direction== "to bottom" {
+    @if $direction== "to top" {
+      border-top: $border-width solid $color2;
+      border-bottom: $border-width solid $color1;
+    } @else {
+      border-top: $border-width solid $color1;
+      border-bottom: $border-width solid $color2;
+    }
+
+    background-position: 0 0, 100% 0;
+    background-size: $border-width 100%;
+  }
+}
+
+@mixin button-animation($color) {
+  transition: transform 0.05s ease-in-out, background 0.1s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    background: lighten($color, 10%);
+  }
+
+  &:active {
+    background: darken($color, 10%);
+    transform: translateY(2px);
+  }
+}
+
+@mixin placeholder-settings(
+  $color,
+  $font-family,
+  $font-weight,
+  $font-size,
+  $padding
+) {
+  ::-webkit-input-placeholder {
+    color: $color;
+    font-family: $font-family;
+    font-weight: $font-weight;
+    font-size: $font-size;
+    padding: $padding;
+  }
+
+  ::-moz-placeholder {
+    color: $color;
+    font-family: $font-family;
+    font-weight: $font-weight;
+    font-size: $font-size;
+    padding: $padding;
+  }
+
+  :-moz-placeholder {
+    color: $color;
+    font-family: $font-family;
+    font-weight: $font-weight;
+    font-size: $font-size;
+    padding: $padding;
+  }
+
+  :-ms-input-placeholder {
+    color: $color;
+    font-family: $font-family;
+    font-weight: $font-weight;
+    font-size: $font-size;
+    padding: $padding;
+  }
+}
