@@ -2,6 +2,7 @@
 $roboto-font: "Roboto Condensed", sans-serif;
 $dosis-font: "Dosis", sans-serif;
 $font-color: #2f1946;
+$white: #fff;
 
 @mixin gradient-border($color1, $color2, $border-width, $direction) {
   border: none;
@@ -9,26 +10,28 @@ $font-color: #2f1946;
   background-image: linear-gradient(#{$direction}, $color1 0%, $color2 100%),
     linear-gradient(#{$direction}, $color1 0%, $color2 100%);
 
-  @if $direction == "to right" or $direction == "to left" {
-    @if $direction == "to right" {
+  @if $direction== "to right" or $direction== "to left" {
+    @if $direction== "to right" {
       border-left: $border-width solid $color1;
       border-right: $border-width solid $color2;
     } @else {
       border-left: $border-width solid $color2;
       border-right: $border-width solid $color1;
     }
+
     background-position: 0 0, 0 100%;
     background-size: 100% $border-width;
   }
 
-  @if $direction == "to top" or $direction == "to bottom" {
-    @if $direction == "to top" {
+  @if $direction== "to top" or $direction== "to bottom" {
+    @if $direction== "to top" {
       border-top: $border-width solid $color2;
       border-bottom: $border-width solid $color1;
     } @else {
       border-top: $border-width solid $color1;
       border-bottom: $border-width solid $color2;
     }
+
     background-position: 0 0, 100% 0;
     background-size: $border-width 100%;
   }
@@ -36,13 +39,55 @@ $font-color: #2f1946;
 
 @mixin button-animation($color) {
   transition: transform 0.05s ease-in-out, background 0.1s ease-in-out;
+
   &:hover {
     cursor: pointer;
     background: lighten($color, 10%);
   }
+
   &:active {
     background: darken($color, 10%);
     transform: translateY(2px);
+  }
+}
+
+@mixin placeholder-settings(
+  $color,
+  $font-family,
+  $font-weight,
+  $font-size,
+  $padding
+) {
+  ::-webkit-input-placeholder {
+    color: $color;
+    font-family: $font-family;
+    font-weight: $font-weight;
+    font-size: $font-size;
+    padding: $padding;
+  }
+
+  ::-moz-placeholder {
+    color: $color;
+    font-family: $font-family;
+    font-weight: $font-weight;
+    font-size: $font-size;
+    padding: $padding;
+  }
+
+  :-moz-placeholder {
+    color: $color;
+    font-family: $font-family;
+    font-weight: $font-weight;
+    font-size: $font-size;
+    padding: $padding;
+  }
+
+  :-ms-input-placeholder {
+    color: $color;
+    font-family: $font-family;
+    font-weight: $font-weight;
+    font-size: $font-size;
+    padding: $padding;
   }
 }
 
@@ -52,7 +97,7 @@ body {
 
 .top-container {
   width: 100%;
-  background: #fff;
+  background: $white;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -63,6 +108,7 @@ body {
     height: 100vh;
     opacity: 0.7;
   }
+
   .logo {
     top: 10%;
     position: absolute;
@@ -74,6 +120,7 @@ body {
     position: absolute;
     display: flex;
     justify-content: center;
+
     .title {
       color: $font-color;
       font-family: $roboto-font;
@@ -81,9 +128,11 @@ body {
       font-size: 50px;
       margin-top: 50px;
     }
+
     .container-button {
       display: flex;
       justify-content: center;
+
       .round-line {
         width: 180px;
         height: 55px;
@@ -102,7 +151,7 @@ body {
           width: 180px;
           height: 55px;
           z-index: 90;
-          color: #fff;
+          color: $white;
           font-weight: 600;
           font-family: $roboto-font;
           font-size: 18px;
@@ -114,6 +163,7 @@ body {
             display: block;
             margin-right: 0px;
           }
+
           p {
             display: block;
           }
@@ -141,22 +191,25 @@ body {
       img {
         margin-top: 90px;
       }
+
       .text-area {
         display: flex;
         bottom: 0;
         font-weight: 600;
         font-family: $dosis-font;
         font-size: 30px;
-        color: #fff;
+        color: $white;
         display: block;
         height: 90px;
         width: 100%;
         background-color: #e44254;
+
         p {
           margin-left: 25%;
         }
       }
     }
+
     .hearts-card {
       display: flex;
       align-content: space-between;
@@ -170,22 +223,25 @@ body {
       img {
         margin-top: 90px;
       }
+
       .text-area {
         display: flex;
         bottom: 0;
         font-weight: 600;
         font-family: $dosis-font;
         font-size: 30px;
-        color: #fff;
+        color: $white;
         display: block;
         height: 90px;
         width: 100%;
         background-color: #d3191f;
+
         p {
           margin-left: 25%;
         }
       }
     }
+
     .wi-fi-card {
       display: flex;
       align-content: space-between;
@@ -198,17 +254,19 @@ body {
       img {
         margin-top: 90px;
       }
+
       .text-area {
         display: flex;
         bottom: 0;
         font-weight: 600;
         font-family: $dosis-font;
         font-size: 30px;
-        color: #fff;
+        color: $white;
         display: block;
         height: 90px;
         width: 100%;
         background-color: #e56100;
+
         p {
           margin-left: 30%;
         }
@@ -225,6 +283,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   .greetings {
     margin: 0 auto;
     width: max-content;
@@ -233,6 +292,7 @@ body {
     flex-direction: column;
     display: flex;
     justify-content: center;
+
     .main-text {
       color: $font-color;
       font-family: $dosis-font;
@@ -240,6 +300,7 @@ body {
       margin: 0 auto;
       font-weight: 700;
     }
+
     .Welcome {
       color: $font-color;
       font-family: $dosis-font;
@@ -249,6 +310,7 @@ body {
       align-items: center;
       margin: 0 auto;
     }
+
     .author {
       margin: 0;
       margin-left: auto;
@@ -257,6 +319,7 @@ body {
       font-size: 20px;
       color: #fe4a5d;
     }
+
     img {
       margin: 0 auto;
       margin-right: 10px;
@@ -268,12 +331,14 @@ body {
     margin-top: 30px;
     display: flex;
     justify-content: space-between;
+
     .form-container {
       .border {
         padding: 60px 100px;
         @include gradient-border(#e22128, #f9b316, 7px, "to right");
         background-color: transparent;
         margin: 0px 50px;
+
         .title {
           display: flex;
           justify-content: center;
@@ -281,14 +346,17 @@ body {
           font-size: 35px;
           font-family: $dosis-font;
           font-weight: 700;
+
           p {
             margin-top: 0;
           }
         }
+
         img {
           padding: 0 10px;
           width: 7px;
         }
+
         .sign-up-fackebook {
           font-family: $dosis-font;
           font-size: 18px;
@@ -297,13 +365,14 @@ body {
           justify-content: center;
           display: flex;
           background-color: #2f53a3;
-          color: #fff;
+          color: $white;
           border: none;
           width: 270px;
           padding: 10px 20px;
           border-radius: 5px;
           @include button-animation(#2f53a3);
         }
+
         .or-class {
           display: flex;
           justify-content: center;
@@ -319,6 +388,7 @@ body {
             width: 7.2rem;
             transform: translateY(1.5rem);
           }
+
           &:after {
             margin-left: 10px;
             display: inline-block;
@@ -332,6 +402,7 @@ body {
         .form {
           display: flex;
           flex-direction: column;
+          @include placeholder-settings(#81398b, $dosis-font, 700, 16px, 10px);
           input {
             color: #81398b;
             border-radius: 5px;
@@ -341,9 +412,10 @@ body {
             font-size: 16px;
             font-weight: 600;
           }
+
           .lets-go-button {
             background-color: #81398b;
-            color: #fff;
+            color: $white;
             font-size: 18px;
             font-weight: 600;
             font-family: $dosis-font;
@@ -356,6 +428,7 @@ body {
         }
       }
     }
+
     img {
       object-fit: cover;
       overflow: hidden;
@@ -363,7 +436,7 @@ body {
   }
 }
 
-.footer {
+.footer-container {
   margin-top: 205px;
   object-fit: cover;
   overflow: hidden;
@@ -374,16 +447,19 @@ body {
     align-items: center;
     width: 110%;
     margin-left: -3%;
+
     img {
       width: 110%;
       object-fit: cover;
       overflow: hidden;
     }
+
     .content-join-now {
       position: absolute;
       display: flex;
       flex-direction: column;
       margin-right: 10px;
+
       p {
         font-family: $dosis-font;
         color: #67326e;
@@ -391,55 +467,115 @@ body {
         font-weight: 700;
         margin: 0 auto;
       }
+
       button {
         margin: 0 auto;
         margin-top: 15px;
         padding: 10px 40px;
         border-radius: 5px;
         border: none;
-        color: #fff;
+        color: $white;
         font-family: $dosis-font;
         font-weight: 600;
         font-size: 1.4em;
         background: linear-gradient(to right, #e22128, #f9b316);
-        transition: padding 0.25s ease-in-out, transform 0.1s ease-in-out;
+        transition: padding 0.2s ease-in-out, transform 0.1s ease-in-out;
+
         &:hover {
           padding: 15px 30px;
           cursor: pointer;
         }
+
         &:active {
           transform: translateY(2px);
         }
       }
     }
   }
-}
 
-::-webkit-input-placeholder {
-  color: #81398b;
-  font-family: $dosis-font;
-  font-weight: 700;
-  font-size: 16px;
-  padding: 10px;
-}
-::-moz-placeholder {
-  color: #81398b;
-  font-family: $dosis-font;
-  font-weight: 700;
-  font-size: 16px;
-  padding: 10px;
-}
-:-moz-placeholder {
-  color: #81398b;
-  font-family: $dosis-font;
-  font-weight: 700;
-  font-size: 16px;
-  padding: 10px;
-}
-:-ms-input-placeholder {
-  color: #81398b;
-  font-family: $dosis-font;
-  font-weight: 700;
-  font-size: 16px;
-  padding: 10px;
+  .footer {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    .footer-form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      p {
+        font-size: 1.2em;
+        font-family: $dosis-font;
+        font-weight: 700;
+        color: #00cfae;
+      }
+      form {
+        display: flex;
+        input {
+          margin-left: 20px;
+          height: 33px;
+          width: 300px;
+        }
+
+        button {
+          margin-left: -5px;
+          padding: 10px 30px;
+          background-color: #00cfae;
+          color: $white;
+          border: none;
+          font-size: 1em;
+          font-family: $dosis-font;
+          font-weight: 700;
+          border-radius: 0 5px 5px 0;
+          @include button-animation(#00cfae);
+        }
+        @include placeholder-settings(#cacaca, $dosis-font, 700, 16px, 10px);
+      }  
+    }
+    .links{
+      display: flex;
+      justify-content: center;
+      margin: 60px 0px;
+      a{
+        margin-left: 60px;
+        text-decoration: none;
+        color: $font-color;
+        font-weight: 800;
+        font-size: 1.2em;
+        font-family: $dosis-font;
+        transition: transform 0.05s ease-in-out, color 0.1s ease-in-out;
+
+        &:hover {
+          cursor: pointer;
+          color: lighten($font-color, 30%);
+        }
+      
+        &:active {
+          color: lighten($font-color, 50%);
+          transform: translateY(2px);
+        }
+      }
+    }
+    .flags{
+      display: flex;
+      justify-content: center;
+      &:after{
+        position: absolute;
+        margin-top: 30px;
+        margin-left: 60px ;
+        content: "";
+        background-color: #d3d3d3;
+        height: 1px;
+        width: 58vw;
+      }
+    }
+    .rights{
+      display: flex;
+      justify-content: center;
+      font-family: $dosis-font;
+      font-weight: 600;
+      font-size: 0.9em;
+      color: #2f1946;
+      margin-top: 30px;
+    }
+  }
 }

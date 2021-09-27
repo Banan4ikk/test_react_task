@@ -297,6 +297,34 @@ body {
   display: flex;
   flex-direction: column;
 }
+.middle-block-main .middle .form-container .border .form ::-webkit-input-placeholder {
+  color: #81398b;
+  font-family: "Dosis", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 10px;
+}
+.middle-block-main .middle .form-container .border .form ::-moz-placeholder {
+  color: #81398b;
+  font-family: "Dosis", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 10px;
+}
+.middle-block-main .middle .form-container .border .form :-moz-placeholder {
+  color: #81398b;
+  font-family: "Dosis", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 10px;
+}
+.middle-block-main .middle .form-container .border .form :-ms-input-placeholder {
+  color: #81398b;
+  font-family: "Dosis", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 10px;
+}
 .middle-block-main .middle .form-container .border .form input {
   color: #81398b;
   border-radius: 5px;
@@ -331,37 +359,37 @@ body {
   overflow: hidden;
 }
 
-.footer {
+.footer-container {
   margin-top: 205px;
   object-fit: cover;
   overflow: hidden;
 }
-.footer .join-now {
+.footer-container .join-now {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 110%;
   margin-left: -3%;
 }
-.footer .join-now img {
+.footer-container .join-now img {
   width: 110%;
   object-fit: cover;
   overflow: hidden;
 }
-.footer .join-now .content-join-now {
+.footer-container .join-now .content-join-now {
   position: absolute;
   display: flex;
   flex-direction: column;
   margin-right: 10px;
 }
-.footer .join-now .content-join-now p {
+.footer-container .join-now .content-join-now p {
   font-family: "Dosis", sans-serif;
   color: #67326e;
   font-size: 65px;
   font-weight: 700;
   margin: 0 auto;
 }
-.footer .join-now .content-join-now button {
+.footer-container .join-now .content-join-now button {
   margin: 0 auto;
   margin-top: 15px;
   padding: 10px 40px;
@@ -372,44 +400,129 @@ body {
   font-weight: 600;
   font-size: 1.4em;
   background: linear-gradient(to right, #e22128, #f9b316);
-  transition: padding 0.25s ease-in-out, transform 0.1s ease-in-out;
+  transition: padding 0.2s ease-in-out, transform 0.1s ease-in-out;
 }
-.footer .join-now .content-join-now button:hover {
+.footer-container .join-now .content-join-now button:hover {
   padding: 15px 30px;
   cursor: pointer;
 }
-.footer .join-now .content-join-now button:active {
+.footer-container .join-now .content-join-now button:active {
   transform: translateY(2px);
 }
-
-::-webkit-input-placeholder {
-  color: #81398b;
+.footer-container .footer {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.footer-container .footer .footer-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer-container .footer .footer-form p {
+  font-size: 1.2em;
+  font-family: "Dosis", sans-serif;
+  font-weight: 700;
+  color: #00cfae;
+}
+.footer-container .footer .footer-form form {
+  display: flex;
+}
+.footer-container .footer .footer-form form input {
+  margin-left: 20px;
+  height: 33px;
+  width: 300px;
+}
+.footer-container .footer .footer-form form button {
+  margin-left: -5px;
+  padding: 10px 30px;
+  background-color: #00cfae;
+  color: #fff;
+  border: none;
+  font-size: 1em;
+  font-family: "Dosis", sans-serif;
+  font-weight: 700;
+  border-radius: 0 5px 5px 0;
+  transition: transform 0.05s ease-in-out, background 0.1s ease-in-out;
+}
+.footer-container .footer .footer-form form button:hover {
+  cursor: pointer;
+  background: #03ffd7;
+}
+.footer-container .footer .footer-form form button:active {
+  background: #009c83;
+  transform: translateY(2px);
+}
+.footer-container .footer .footer-form form ::-webkit-input-placeholder {
+  color: #cacaca;
   font-family: "Dosis", sans-serif;
   font-weight: 700;
   font-size: 16px;
   padding: 10px;
 }
-
-::-moz-placeholder {
-  color: #81398b;
+.footer-container .footer .footer-form form ::-moz-placeholder {
+  color: #cacaca;
   font-family: "Dosis", sans-serif;
   font-weight: 700;
   font-size: 16px;
   padding: 10px;
 }
-
-:-moz-placeholder {
-  color: #81398b;
+.footer-container .footer .footer-form form :-moz-placeholder {
+  color: #cacaca;
   font-family: "Dosis", sans-serif;
   font-weight: 700;
   font-size: 16px;
   padding: 10px;
 }
-
-:-ms-input-placeholder {
-  color: #81398b;
+.footer-container .footer .footer-form form :-ms-input-placeholder {
+  color: #cacaca;
   font-family: "Dosis", sans-serif;
   font-weight: 700;
   font-size: 16px;
   padding: 10px;
+}
+.footer-container .footer .links {
+  display: flex;
+  justify-content: center;
+  margin: 60px 0px;
+}
+.footer-container .footer .links a {
+  margin-left: 60px;
+  text-decoration: none;
+  color: #2f1946;
+  font-weight: 800;
+  font-size: 1.2em;
+  font-family: "Dosis", sans-serif;
+  transition: transform 0.05s ease-in-out, color 0.1s ease-in-out;
+}
+.footer-container .footer .links a:hover {
+  cursor: pointer;
+  color: #7b41b7;
+}
+.footer-container .footer .links a:active {
+  color: #ae89d5;
+  transform: translateY(2px);
+}
+.footer-container .footer .flags {
+  display: flex;
+  justify-content: center;
+}
+.footer-container .footer .flags:after {
+  position: absolute;
+  margin-top: 30px;
+  margin-left: 60px;
+  content: "";
+  background-color: #d3d3d3;
+  height: 1px;
+  width: 58vw;
+}
+.footer-container .footer .rights {
+  display: flex;
+  justify-content: center;
+  font-family: "Dosis", sans-serif;
+  font-weight: 600;
+  font-size: 0.9em;
+  color: #2f1946;
+  margin-top: 30px;
 }
